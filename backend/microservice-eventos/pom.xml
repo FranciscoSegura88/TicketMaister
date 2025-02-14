@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.eventos</groupId>
-	<artifactId>spring-boot-microservice-1-eventos</artifactId>
+	<artifactId>microservice-eventos</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-boot-microservice-1-eventos</name>
 	<description>Demo project for Spring Boot</description>
