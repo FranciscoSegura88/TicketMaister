@@ -1,7 +1,6 @@
 package com.eventos.spring_boot_microservice_1_eventos.controller;
 
 import com.eventos.spring_boot_microservice_1_eventos.model.Teatro;
-import com.eventos.spring_boot_microservice_1_eventos.repository.TeatroRepository;
 import com.eventos.spring_boot_microservice_1_eventos.service.TeatroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +16,7 @@ public class TeatroController {
     @Autowired
     private TeatroService teatroService;
 
-    @GetMapping
+    @GetMapping("/listarTeatros")
     public List<Teatro> listarTeatros(){
         return teatroService.listarTeatros();
     }
@@ -29,7 +28,7 @@ public class TeatroController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PostMapping
+    @PostMapping("/guardarTeatro")
     public Teatro guardarTeatro(@RequestBody Teatro teatro){
         return teatroService.guardarTeatro(teatro);
     }

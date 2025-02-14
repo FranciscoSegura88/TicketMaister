@@ -17,7 +17,7 @@ public class FuncionController {
     @Autowired
     private FuncionService funcionService;
 
-    @GetMapping("listarFunciones")
+    @GetMapping("/listarFunciones")
     public List<Funcion> listarFunciones(){
         return funcionService.listarFunciones();
     }
@@ -29,7 +29,7 @@ public class FuncionController {
                 .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PostMapping("guardarFuncion")
+    @PostMapping("/guardarFuncion")
     public Funcion guardarFuncion(@RequestBody Funcion funcion){
         return funcionService.guardarFuncion(funcion);
     }
