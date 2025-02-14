@@ -10,13 +10,13 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping
+@RequestMapping("api/ciudades")
 public class CiudadController {
 
     @Autowired
     public CiudadService ciudadService;
 
-    @GetMapping
+    @GetMapping("/obtenerCiudades")
     public List<Ciudad> listarCiudades(){
         return ciudadService.listarCiudades();
     }
@@ -28,7 +28,7 @@ public class CiudadController {
         .orElseGet(() -> ResponseEntity.notFound().build());
     }
 
-    @PostMapping
+    @PostMapping("/guardarCiudad")
     public Ciudad guardarCiudad(@RequestBody Ciudad ciudad){
         return ciudadService.guardarCiudad(ciudad);
     }
